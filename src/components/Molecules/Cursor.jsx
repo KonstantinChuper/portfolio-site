@@ -32,13 +32,22 @@ export default function Cursor({ hovered }) {
     return () => cancelAnimationFrame(requestRef.current)
   }, [animate])
 
-  return (
-    <div
-      className={`fixed w-7 h-7 border border-gray-200 opacity-90 rounded-full pointer-events-none 
-                transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 ease-in-out ${
-                  hovered ? 'scale-250 bg-gray-200 opacity-20 transition-all duration-500' : ''
-                }`}
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
-    />
-  )
+  const cursorStyle = {
+    position: 'fixed',
+    width: '28px',
+    height: '28px',
+    borderRadius: '50%',
+    pointerEvents: 'none',
+    transform: `translate(-50%, -50%) ${hovered ? 'scale(2.5)' : 'scale(1)'}`,
+    border: '1px solid rgb(229, 231, 235)',
+    left: `${position.x}px`,
+    top: `${position.y}px`,
+    opacity: hovered ? 0.15 : 0.9,
+    backgroundColor: hovered ? 'rgb(229, 231, 235)' : 'transparent',
+    transition: hovered
+      ? 'transform 500ms, opacity 500ms, background-color 500ms'
+      : 'transform 200ms ease-in-out'
+  }
+
+  return <div style={cursorStyle} />
 }
