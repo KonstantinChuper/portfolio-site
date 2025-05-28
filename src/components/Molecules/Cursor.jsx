@@ -36,7 +36,7 @@ export default function Cursor({ hovered }) {
     <div
       className={`fixed w-7 h-7 border border-gray-200 opacity-90 rounded-full pointer-events-none 
                 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 ease-in-out ${
-                  hovered ? 'scale-250 bg-gray-200 opacity-15 transition-all duration-500' : ''
+                  hovered ? 'scale-250 bg-gray-200 opacity-20 transition-all duration-500' : ''
                 }`}
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     />

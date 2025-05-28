@@ -18,7 +18,7 @@ export default {
         handjet: ['Handjet', 'sans-serif']
       },
       backgroundImage: {
-        'hero-pattern': "url('./src/assets/hero-bcg.png')"
+        'hero-pattern': "url('/hero-bcg.png')"
       },
       width: {
         550: '550px'
