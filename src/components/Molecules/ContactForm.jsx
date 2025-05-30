@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
 import { useEffect } from 'react'
 
-export default function ContactForm() {
+export default function ContactForm({ setHovered }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
 
@@ -134,6 +134,8 @@ export default function ContactForm() {
         <div className="flex justify-center">
           <button
             type="submit"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
             disabled={isSubmitting}
             className="px-20 py-4 bg-colorPrimary text-colorBlack font-medium rounded hover:bg-opacity-90 transition-colors disabled:opacity-70"
           >

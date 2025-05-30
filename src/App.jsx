@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Cursor from './components/Molecules/Cursor'
 import Aside from './components/Organismus/Aside'
 import MainPage from './pages/MainPage'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NotFound from './pages/404'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 
 function App() {
   const [hovered, setHovered] = useState(false)
@@ -21,6 +23,11 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<MainPage setHovered={setHovered} />} />
+            <Route path="*" element={<NotFound />} />
+            <Route
+              path="/projects/:projectSlug"
+              element={<ProjectDetailPage setHovered={setHovered} />}
+            />
           </Routes>
         </main>
         <Cursor hovered={hovered} />

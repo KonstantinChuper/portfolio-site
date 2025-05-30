@@ -1,14 +1,20 @@
 import { useState } from 'react'
 import AnimatedLetters from '../Atoms/AnimatedLetters'
+import { useLocation, useNavigate } from 'react-router-dom'
+
 
 export default function NavItem({ icon, children, onMouseEnter, onMouseLeave, href }) {
   const [isHovered, setIsHovered] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleClick = (e) => {
     e.preventDefault()
-    const targetElement = document.querySelector(href)
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' })
+    const isHomePage = location.pathname === '/'
+    if (isHomePage) {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/', { state: { scrollTo: href.substring(1) } })
     }
   }
 

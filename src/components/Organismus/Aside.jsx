@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 export default function Aside({ setHovered }) {
   return (
-    <aside className="sticky w-64 h-screen overflow-y-auto border-solid border-r2 bg-colorMenu border-r-gray-800 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+    <aside className="sticky w-64 h-screen overflow-y-auto border-solid border-r2 bg-colorMenu border-r-gray-800 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] shrink-0">
       <Link
         to="/"
         onMouseEnter={() => setHovered(true)}

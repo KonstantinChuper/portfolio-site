@@ -1,27 +1,27 @@
 import React from 'react'
 import ContentContainer from '../Atoms/ContentContainer'
 import PortfolioElement from '../Molecules/PortfolioElement'
-import project1 from '../../assets/projects/Freevet_1.jpg'
-import project2 from '../../assets/projects/HoldMyCode_1.jpg'
-import project3 from '../../assets/projects/Syrena_1.jpg'
+import project2 from '../../assets/projects/Freevet_1.jpg'
+import project3 from '../../assets/projects/HoldMyCode_1.jpg'
+import project1 from '../../assets/projects/Syrena_1.jpg'
 import project4 from '../../assets/projects/Ichgramm_1.jpg'
 
 export default function PortfolioSection({ setHovered }) {
   const portfolioItems = [
     {
       image: project1,
+      title: 'Syrena',
+      to: '/projects/Syrena'
+    },
+    {
+      image: project2,
       title: 'Freevet',
       to: '/projects/Freevet'
     },
     {
-      image: project2,
+      image: project3,
       title: 'Hold My Code',
       to: '/projects/HoldMyCode'
-    },
-    {
-      image: project3,
-      title: 'Syrena',
-      to: '/projects/Syrena'
     },
     {
       image: project4,

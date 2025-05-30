@@ -13,19 +13,28 @@ export default function SkillsSection({ setHovered }) {
   const skills = {
     Frontend: {
       icon: <RiReactjsLine size={24} className="text-colorPrimary" />,
-      list: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'React Native', 'Redux']
+      list: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'Next.js',
+        'React Native',
+        'Redux, Zustand'
+      ]
     },
     Backend: {
       icon: <SlSettings size={24} className="text-colorPrimary" />,
       list: [
         'Node.js',
         'Express',
-        'Strapi CMS',
-        'WordPress',
         'MySQL',
         'MongoDB',
         'GraphQL',
-        'REST API'
+        'REST API',
+        'WordPress',
+        'Strapi CMS, Firebase'
       ]
     },
     Tools: {
@@ -80,15 +89,23 @@ export default function SkillsSection({ setHovered }) {
               ))}
             </div>
             <div className="flex gap-6 mt-6">
-              <button
+              <a
+                href="/CV_Kostiantyn_Chuper.pdf"
+                download
                 className="btn btn-primary rounded border border-colorBtnBorder hover:bg-colorBlack hover:border-colorPrimary"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
               >
                 Download CV
                 <RiDownloadLine size={20} />
-              </button>
+              </a>
               <button
+                onClick={() => {
+                  document.getElementById('contact').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  })
+                }}
                 className="btn btn-secondary rounded bg-colorBlack"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}

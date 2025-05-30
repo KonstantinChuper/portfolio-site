@@ -4,7 +4,10 @@ import { RiDownloadLine } from 'react-icons/ri'
 
 export default function HomeSection({ setHovered }) {
   return (
-    <section id='home' className="flex items-center justify-center flex-grow h-screen bg-black bg-center bg-cover bg-hero-pattern mb-24">
+    <section
+      id="home"
+      className="flex items-center justify-center flex-grow h-screen bg-black bg-center bg-cover bg-hero-pattern mb-24"
+    >
       <ContentContainer>
         <h1 className="text-6xl font-bold uppercase text-colorWhite">Hello, I&#39;m</h1>
         <h2 className="pt-2 text-6xl font-bold uppercase text-colorWhite"> Konstantin!</h2>
@@ -17,14 +20,16 @@ export default function HomeSection({ setHovered }) {
           websites. I thrive on creating code that is not only functional but also brings designs to
           life, ensuring every project is both captivating and accessible.
         </p>
-        <button
+        <a
+          href="/CV_Kostiantyn_Chuper.pdf"
+          download
           className="btn btn-primary"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
           Download Cv
           <RiDownloadLine />
-        </button>
+        </a>
       </ContentContainer>
     </section>
   )
