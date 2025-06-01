@@ -3,16 +3,18 @@ import ServiceCard from '../Molecules/ServiceCard'
 import { TiHtml5 } from 'react-icons/ti'
 import { BsDatabaseGear } from 'react-icons/bs'
 import { GrDocumentTest } from 'react-icons/gr'
+import SectionTitle from '../Molecules/SectionTitle'
 
 export default function ServiceSection() {
   return (
-    <section id="service" className="bg-black text-colorWhite py-14 mb-10 overflow-hidden">
+    <section id="service" className="bg-black text-colorWhite sm:py-14 py-6 sm:mb-10 overflow-hidden">
       <ContentContainer>
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-2xl text-colorPrimary text-center">My Service</p>
-          <h2 className="text-5xl pt-4 font-semibold leading-tight text-center">
-            Turning your ideas into exceptional web experiences with precision and creativity.
-          </h2>
+          <SectionTitle
+            section="My Services"
+            title="Turning your ideas into exceptional web experiences with precision and creativity."
+            divClassname="text-center"
+          />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
           <ServiceCard

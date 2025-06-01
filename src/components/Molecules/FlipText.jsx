@@ -31,7 +31,7 @@ const FlipText = React.memo(() => {
           transformOrigin: 'bottom',
           perspective: '300px'
         }}
-        className="pt-2 text-6xl font-bold uppercase text-colorPrimary"
+        className="pt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-colorPrimary"
       >
         {words[index]}
       </animated.h2>

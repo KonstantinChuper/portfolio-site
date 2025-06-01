@@ -3,19 +3,42 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 export default function Cursor({ hovered }) {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 })
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024)
   const requestRef = useRef()
 
+  // Проверка размера экрана при монтировании и изменении размера
   useEffect(() => {
+    function handleResize() {
+      setIsDesktop(window.innerWidth > 1024)
+    }
+
+    // Инициализация
+    handleResize()
+
+    // Слушатель изменения размера окна
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  // Отслеживание движения мыши только на десктопах
+  useEffect(() => {
+    if (!isDesktop) return
+
     function handleMouseMove(event) {
       setTargetPosition({ x: event.clientX, y: event.clientY })
     }
+
     window.addEventListener('mousemove', handleMouseMove)
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
     }
-  }, [])
+  }, [isDesktop])
 
   const animate = useCallback(() => {
+    if (!isDesktop) return
+
     setPosition((prevPosition) => {
       const dx = targetPosition.x - prevPosition.x
       const dy = targetPosition.y - prevPosition.y
@@ -25,12 +48,21 @@ export default function Cursor({ hovered }) {
       }
     })
     requestRef.current = requestAnimationFrame(animate)
-  }, [targetPosition])
+  }, [targetPosition, isDesktop])
 
   useEffect(() => {
+    if (!isDesktop) return
+
     requestRef.current = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(requestRef.current)
-  }, [animate])
+    return () => {
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current)
+      }
+    }
+  }, [animate, isDesktop])
+
+  // Если не десктоп, не рендерим курсор
+  if (!isDesktop) return null
 
   const cursorStyle = {
     position: 'fixed',
@@ -46,7 +78,8 @@ export default function Cursor({ hovered }) {
     backgroundColor: hovered ? 'rgb(229, 231, 235)' : 'transparent',
     transition: hovered
       ? 'transform 500ms, opacity 500ms, background-color 500ms'
-      : 'transform 200ms ease-in-out'
+      : 'transform 200ms ease-in-out',
+    zIndex: 9999
   }
 
   return <div style={cursorStyle} />

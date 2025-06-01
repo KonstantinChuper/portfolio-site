@@ -21,13 +21,15 @@ export default function RunningText() {
   const textString = words.join(' * ') + ' * '
 
   return (
-    <div className="marquee-outer py-6 bg-colorPrimary uppercase text-3xl mt-5">
+    <div className="marquee-outer py-4 sm:py-6 bg-colorPrimary uppercase sm:mt-5 mt-10">
       <div className="marquee-inner">
         <div className="marquee-content font-handjet">
-          <span className="text-5xl text-black font-semibold selection:ml-1">{textString}</span>
-          <span className="text-5xl text-black font-semibold ml-1">{textString}</span>
-          <span className="text-5xl text-black font-semibold ml-1">{textString}</span>
-          <span className="text-5xl text-black font-semibold ml-1">{textString}</span>
+          <span className="text-3xl sm:text-5xl text-black font-semibold selection:ml-1">
+            {textString}
+          </span>
+          <span className="text-3xl sm:text-5xl text-black font-semibold ml-1">{textString}</span>
+          <span className="text-3xl sm:text-5xl text-black font-semibold ml-1">{textString}</span>
+          <span className="text-3xl sm:text-5xl text-black font-semibold ml-1">{textString}</span>
         </div>
       </div>
 
@@ -48,13 +50,6 @@ export default function RunningText() {
         .marquee-content {
           display: flex;
         }
-
-        /* .marquee-content span {
-          display: inline-block;
-          font-size: 2.25rem;
-          font-weight: bold;
-          padding: 0 0.5rem;
-        } */
 
         @keyframes marquee {
           0% {

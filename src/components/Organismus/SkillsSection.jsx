@@ -7,6 +7,7 @@ import { RiDownloadLine } from 'react-icons/ri'
 import { LuSend } from 'react-icons/lu'
 import { useState } from 'react'
 import AnimatedLetters from '../Atoms/AnimatedLetters'
+import SectionTitle from '../Molecules/SectionTitle'
 
 export default function SkillsSection({ setHovered }) {
   const [hoveredSkill, setHoveredSkill] = useState(null)
@@ -50,12 +51,13 @@ export default function SkillsSection({ setHovered }) {
   return (
     <section id="skills" className="text-white mb-10">
       <ContentContainer>
-        <div className="bg-colorMenu px-6 py-20">
-          <p className="uppercase text-2xl text-colorPrimary text-center">My Skills</p>
-          <h2 className="text-5xl pt-4 font-semibold leading-tight text-center">
-            Building impactful web experiences with precision and creativity.
-          </h2>
-          <p className="text-lg text-colorTextSecondary px-6 py-10">
+        <div className="bg-colorMenu px-6 sm:py-20 py-8">
+          <SectionTitle
+            section="My Skills"
+            title="Building impactful web experiences with precision and creativity."
+            divClassname="text-center"
+          />
+          <p className="sm:text-lg text-colorTextSecondary px-6 sm:py-10 py-5">
             I have a strong command of modern technologies essential for developing
             high-performance, scalable, and user-friendly web applications. My expertise spans both
             frontend and backend development, ensuring seamless user experiences, clean and
@@ -88,7 +90,7 @@ export default function SkillsSection({ setHovered }) {
                 </div>
               ))}
             </div>
-            <div className="flex gap-6 mt-6">
+            <div className="flex flex-col sm:flex-row gap-6 mt-8 sm:mt-12">
               <a
                 href="/CV_Kostiantyn_Chuper.pdf"
                 download

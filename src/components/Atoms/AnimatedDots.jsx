@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 
 export default function AnimatedDots() {
   return (
-    <div className="absolute -bottom-20 -right-14 grid grid-cols-15 gap-4 p-6 z-10">
+    <div className="absolute sm:-bottom-20 sm:-right-14 -bottom-24 -right-20 grid grid-cols-15 sm:gap-4 gap-3 p-6 z-10">
       {[...Array(225)].map((_, i) => (
         <motion.div
           key={i}
-          className="w-1 h-1 bg-colorPrimary rounded-full"
+          className="sm:w-1 sm:h-1 w-0.5 h-0.5 bg-colorPrimary rounded-full"
           animate={{
             scale: [1, 1.6, 1]
           }}

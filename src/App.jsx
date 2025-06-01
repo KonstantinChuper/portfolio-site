@@ -5,6 +5,7 @@ import Aside from './components/Organismus/Aside'
 import MainPage from './pages/MainPage'
 import NotFound from './pages/404'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import PrivacyPolicyPage from './pages/ProvacyPolicyPage'
 
 function App() {
   const [hovered, setHovered] = useState(false)
@@ -28,6 +29,7 @@ function App() {
               path="/projects/:projectSlug"
               element={<ProjectDetailPage setHovered={setHovered} />}
             />
+            <Route path='/privacy-policy' element={<PrivacyPolicyPage setHovered={setHovered} />} />
           </Routes>
         </main>
         <Cursor hovered={hovered} />

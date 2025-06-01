@@ -7,6 +7,8 @@ import PortfolioSection from '../components/Organismus/PortfolioSection'
 import ServiceSection from '../components/Organismus/ServiceSection'
 import SkilllsSection from '../components/Organismus/SkillsSection'
 import RunningText from '../components/Organismus/RunningText'
+import CookieBanner from '../components/Organismus/CookieBanner'
+import Footer from '../components/Organismus/Footer'
 
 export default function MainPage({ setHovered }) {
   const location = useLocation()
@@ -27,12 +29,14 @@ export default function MainPage({ setHovered }) {
   return (
     <div className="bg-black">
       <HomeSection setHovered={setHovered} />
-      <AboutSection setHovered={setHovered} />
-      <ServiceSection setHovered={setHovered} />
+      <AboutSection />
+      <ServiceSection />
       <SkilllsSection setHovered={setHovered} />
       <PortfolioSection setHovered={setHovered} />
       <RunningText />
       <ContactSection setHovered={setHovered} />
+      <CookieBanner setHovered={setHovered} />
+      <Footer setHovered={setHovered} />
     </div>
   )
 }

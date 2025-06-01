@@ -7,12 +7,12 @@ import ContactForm from '../Molecules/ContactForm'
 
 export default function ContactSection({setHovered}) {
   return (
-    <section id="contact" className="bg-black text-colorWhite py-14 overflow-hidden">
+    <section id="contact" className="bg-black text-colorWhite py-8 sm:py-14 overflow-hidden">
       <ContentContainer>
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-2xl text-colorPrimary text-center">Contact me</p>
+          <p className="uppercase text-xl sm:text-2xl text-colorPrimary text-center">Contact me</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 sm:mt-16">
           <ContactCard
             icon={<BsPhoneVibrate size={70} />}
             header="Phone & WhatsApp"
