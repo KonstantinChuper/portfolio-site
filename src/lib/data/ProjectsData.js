@@ -3,7 +3,14 @@ import freevet2 from '../../assets/projects/Freevet_2.png'
 import holdMyCode1 from '../../assets/projects/HoldMyCode_1.jpg'
 import holdMyCode2 from '../../assets/projects/HoldMyCode_2.png'
 import syrena1 from '../../assets/projects/Syrena_1.jpg'
+import syrena2 from '../../assets/projects/Syrena_2.png'
 import ichgramm1 from '../../assets/projects/Ichgramm_1.jpg'
+import ichgramm2 from '../../assets/projects/Ichgramm_2.png'
+import ichgramm3 from '../../assets/projects/Ichgramm_3.png'
+import ichgramm4 from '../../assets/projects/Ichgramm_4.png'
+import ichgramm5 from '../../assets/projects/Ichgramm_5.png'
+import ichgramm6 from '../../assets/projects/Ichgramm_6.png'
+import ichgramm7 from '../../assets/projects/Ichgramm_7.png'
 
 export const projectsData = {
   Freevet: {
@@ -48,7 +55,7 @@ export const projectsData = {
       'Developing both the frontend and backend to support dynamic profile creation, role-based access, and secure data handling within a scalable architecture.',
     solution:
       'Implemented structured API endpoints for user and profile management, integrated Firebase for authentication and data storage, and created responsive UI components with filtering and conditional rendering based on user roles.',
-    images: [syrena1],
+    images: [syrena1, syrena2],
     liveUrl: 'https://syrena.co.uk',
     year: '2025'
   },
@@ -63,7 +70,7 @@ export const projectsData = {
       'Building a full-featured social media application with real-time interactions, efficient media handling, and scalable architecture within a limited timeframe.',
     solution:
       'Adopted a microservices architecture for better scalability, implemented progressive image loading for faster content delivery, and utilized WebSockets for real-time messaging and notifications, complemented by extensive automated testing.',
-    images: [ichgramm1],
+    images: [ichgramm1, ichgramm2, ichgramm3, ichgramm4, ichgramm5, ichgramm6, ichgramm7],
     // liveUrl: 'https://ichgramm.com',
     githubUrl: 'https://github.com/KonstantinChuper/ich-gramm',
     year: '2024'

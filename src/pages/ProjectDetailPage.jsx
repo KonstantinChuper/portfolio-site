@@ -32,13 +32,13 @@ export default function ProjectDetailPage({ setHovered }) {
           className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
           style={{ backgroundImage: `url(${project.images[activeImageIndex]})` }}
         ></div>
-        <div className="relative z-50 h-full">
+        <div className="relative z-30 h-full">
           <ContentContainer className="h-full flex flex-col justify-end p-16">
             <motion.div
               initial={{ opacity: 1, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="z-50 pt-5"
+              className="z-30 pt-5"
             >
               <Link
                 to="/"
@@ -83,7 +83,7 @@ export default function ProjectDetailPage({ setHovered }) {
 
               <h2 className="text-3xl font-semibold mb-6">Project Gallery</h2>
               <div className="space-y-6">
-                {project.images.map((image, index) => (
+                {project.images.slice(1).map((image, index) => (
                   <div
                     key={index}
                     className="overflow-hidden rounded-lg bg-colorMenu transition-all hover:transform hover:scale-[1.01]"

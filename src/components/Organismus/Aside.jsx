@@ -12,24 +12,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Aside({ setHovered }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-      if (window.innerWidth >= 1024) {
-        setIsMobileMenuOpen(false)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const handleNavClick = () => {
-    if (windowWidth < 1024) {
-      setIsMobileMenuOpen(false)
-    }
+  const handleMobileNavClick = () => {
+    setIsMobileMenuOpen(false)
   }
 
   const navItems = [
@@ -102,26 +87,32 @@ export default function Aside({ setHovered }) {
           >
             <div className="flex flex-col h-full">
               <div className="flex flex-col items-center justify-center bg-colorMenuTop py-6 px-4">
-                <img src={KC} alt="logo" className="w-20" />
-                <p className="font-mono text-lg font-bold text-colorWhite">Konstantin Chuper</p>
-                <p className="text-base font-semibold uppercase text-colorPrimary font-handjet">
-                  Web developer
-                </p>
+                <Link
+                  to="/"
+                  className="flex flex-col items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <img src={KC} alt="logo" className="w-20" />
+                  <p className="font-mono text-lg font-bold text-colorWhite">Konstantin Chuper</p>
+                  <p className="text-base font-semibold uppercase text-colorPrimary font-handjet">
+                    Web developer
+                  </p>
+                </Link>
               </div>
 
               <nav className="flex flex-col items-center justify-center flex-1 overflow-y-auto py-8">
                 {navItems.map((item) => (
-                  <a
+                  <NavItem
                     key={item.key}
+                    icon={item.icon}
                     href={item.href}
-                    className="flex items-center w-4/5 justify-between px-6 py-4 mb-2 text-lg font-medium text-colorWhite hover:text-colorPrimary border-b border-gray-800 transition-colors duration-300"
-                    onClick={handleNavClick}
+                    isMobile={true}
+                    onClick={handleMobileNavClick}
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                   >
-                    <span>{item.label}</span>
-                    <span className="text-colorPrimary">{item.icon}</span>
-                  </a>
+                    {item.label}
+                  </NavItem>
                 ))}
               </nav>
 
@@ -131,7 +122,7 @@ export default function Aside({ setHovered }) {
                   <Link
                     to="/privacy-policy"
                     className="text-colorPrimary hover:underline"
-                    onClick={handleNavClick}
+                    onClick={handleMobileNavClick}
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                   >

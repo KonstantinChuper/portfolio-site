@@ -3,8 +3,8 @@ import AnimatedDots from '../Atoms/AnimatedDots'
 import about_1 from '../../assets/about_1.png'
 import about_2 from '../../assets/about_2.png'
 import owner from '../../assets/owner.png'
-import { LiaCertificateSolid } from 'react-icons/lia'
 import SectionTitle from '../Molecules/SectionTitle'
+import { CertificateSvg } from '../../lib/svg'
 
 export default function AboutSection() {
   return (
@@ -42,9 +42,9 @@ export default function AboutSection() {
             </div>
           </div>
           <div className="mt-12 md:mt-0 bg-colorMenu flex items-end justify-center rounded-md relative">
-            <div className="absolute -top-8 -left-8 md:-left-10 lg:-left-6 sm:p-4 p-2.5 md:p-6 lg:p-7 bg-colorPrimary rounded-md flex justify-center items-center gap-4 md:gap-6 lg:gap-10">
-              <div className="bg-white w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-md flex items-center justify-center">
-                <LiaCertificateSolid color="black" className="text-3xl md:text-4xl lg:text-5xl" />
+            <div className="absolute -top-8 -left-5 md:-left-10 lg:-left-6 sm:p-4 p-2.5 md:p-6 lg:p-7 bg-colorPrimary rounded-md flex justify-center items-center gap-4 md:gap-6 lg:gap-10">
+              <div className="bg-white w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-md flex items-center justify-center p-1">
+                <CertificateSvg />
               </div>
               <p className="text-colorBlack text-lg md:text-xl lg:text-2xl font-semibold max-w-28 md:max-w-32 lg:max-w-40">
                 Certified specialist

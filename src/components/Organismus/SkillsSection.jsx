@@ -51,7 +51,7 @@ export default function SkillsSection({ setHovered }) {
   return (
     <section id="skills" className="text-white mb-10">
       <ContentContainer>
-        <div className="bg-colorMenu px-6 sm:py-20 py-8">
+        <div className="bg-colorMenu sm:px-6 sm:py-20 py-8">
           <SectionTitle
             section="My Skills"
             title="Building impactful web experiences with precision and creativity."

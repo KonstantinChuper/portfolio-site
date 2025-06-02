@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function AnimatedDots() {
   return (
-    <div className="absolute sm:-bottom-20 sm:-right-14 -bottom-24 -right-20 grid grid-cols-15 sm:gap-4 gap-3 p-6 z-10">
+    <div className="absolute sm:-bottom-20 sm:-right-16 -bottom-16 -right-16 grid grid-cols-15 sm:gap-4 gap-3 p-6 z-10">
       {[...Array(225)].map((_, i) => (
         <motion.div
           key={i}
